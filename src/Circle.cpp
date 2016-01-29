@@ -17,16 +17,19 @@ Circle::Circle() :
         edge(Point{0, 0}),
         radius{0},
         area{0},
-        circumference{0} {}
+        circumference{0}
+        { }
 
-Circle::Circle(Point& center, Point& edge) :
-        center(center), edge(edge),
+Circle::Circle(const Point& center, const Point& edge) :
+        center(center),
+        edge(edge),
         radius{getRadius()},
         area{getArea()},
-        circumference{getCircumference()} {}
+        circumference{getCircumference()}
+        { }
 
 std::ostream& Circle::display(std::ostream& os) const {
-    return os << "radius: " << radius << ", area: " << area << ", circumference: " << circumference;
+    return os << "Circle, radius: " << radius << ", area: " << area << ", circumference: " << circumference;
 }
 
 const int Circle::xDistance() {
@@ -38,7 +41,7 @@ const int Circle::yDistance() {
 }
 
 const float Circle::getArea() {
-    return pi * radius;
+    return pi * radius * radius;
 }
 
 const float Circle::getRadius() {

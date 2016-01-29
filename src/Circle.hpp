@@ -24,9 +24,10 @@ private:
     const float getRadius();
     const float getArea();
     const float getCircumference();
+
 public:
     Circle();
-    Circle(Point&, Point&);
+    Circle(const Point&, const Point&);
     virtual std::ostream& display(std::ostream&) const;
     virtual ~Circle();
 };
